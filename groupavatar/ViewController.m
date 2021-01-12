@@ -85,7 +85,6 @@
     for (NSInteger i = 0; i < maxColum * maxRow; i ++) {
         NSInteger row = i / maxColum;
         NSInteger column = i % maxColum;
-//        CornerView *corner = [[CornerView alloc] initWithFrame:CGRectMake(100 + radius * column + (1 - (sqrtf(3) / 3.0)) * radius * row, 500 + radius * row - ((sqrt(3) - 1) * radius * row), radius, radius)];
         CornerView *corner = [[CornerView alloc] initWithFrame:CGRectMake(0 + radius * 2 * column + radius * row,
                                                                           500 + radius * 2 * row - ((1 - (sqrtf(3) - 1)) * radius * row),
                                                                           radius * 2,
