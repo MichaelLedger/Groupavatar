@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "UIImage+maskClip.h"
 #import "CustomShapeView.h"
+#import "CornerView.h"
 
 @interface ViewController ()
 
@@ -77,6 +78,31 @@
         shapeView.frame = CGRectMake(100, 360, 120, 120);
 //        [shapeView setNeedsDisplay];
     });
+    
+    NSInteger maxColum = 8;
+    NSInteger maxRow = 3;
+    CGFloat radius = [UIScreen mainScreen].bounds.size.width * 1.0 / maxColum / 2;
+    for (NSInteger i = 0; i < maxColum * maxRow; i ++) {
+        NSInteger row = i / maxColum;
+        NSInteger column = i % maxColum;
+//        CornerView *corner = [[CornerView alloc] initWithFrame:CGRectMake(100 + radius * column + (1 - (sqrtf(3) / 3.0)) * radius * row, 500 + radius * row - ((sqrt(3) - 1) * radius * row), radius, radius)];
+        CornerView *corner = [[CornerView alloc] initWithFrame:CGRectMake(0 + radius * 2 * column + radius * row,
+                                                                          500 + radius * 2 * row - ((1 - (sqrtf(3) - 1)) * radius * row),
+                                                                          radius * 2,
+                                                                          radius * 2)];
+        corner.backgroundColor = [UIColor colorWithRed:arc4random() % 255 / 255.0 green:arc4random() % 255 / 255.0 blue:arc4random() % 255 / 255.0 alpha:1.0];
+        
+        CGFloat vertexWH = 3.f;
+        for (NSInteger j = 0; j < 4; j ++) {
+            NSInteger row2 = j / 2;
+            NSInteger column2 = j % 2;
+            UIView *vertex = [[UIView alloc] initWithFrame:CGRectMake((CGRectGetWidth(corner.frame) - vertexWH) * column2, (CGRectGetHeight(corner.frame) - vertexWH) * row2, vertexWH, vertexWH)];
+            vertex.backgroundColor = [UIColor redColor];
+            [corner addSubview:vertex];
+        }
+        
+        [self.view addSubview:corner];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
