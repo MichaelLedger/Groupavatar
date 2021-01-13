@@ -53,11 +53,13 @@
 
 - (void)setupFakers {
     _fakeContentView = [[UIView alloc] init];
+    _fakeContentView.frame = self.bounds;
     [self addSubview:_fakeContentView];
     
     _fakeMaskIv = [[UIImageView alloc] init];
     _fakeMaskIv.backgroundColor = [UIColor whiteColor];
     _fakeMaskIv.userInteractionEnabled = NO;
+    _fakeMaskIv.frame = self.bounds;
     [self addSubview:_fakeMaskIv];
     
 //    The view hierarchy is not prepared for the constraint

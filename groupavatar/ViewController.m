@@ -10,6 +10,7 @@
 #import "UIImage+maskClip.h"
 #import "CustomShapeView.h"
 #import "CornerView.h"
+#import "MaskView.h"
 
 @interface ViewController ()
 
@@ -49,20 +50,24 @@
     [self.view addSubview:imv1];
     imv1.frame = CGRectMake(100, 200, 120, 120);
     
+    MaskView *mask = [[MaskView alloc] initWithFrame:CGRectMake(250, 360, 100, 100)];
+    [self.view addSubview:mask];
+    
     CustomShapeView *shapeView = [[CustomShapeView alloc] initWithFrame:CGRectMake(100, 360, 60, 60)];
     shapeView.backgroundColor = [UIColor orangeColor];
     shapeView.contentMode = UIViewContentModeRedraw;//每次设置或更改frame的时候自动调用drawRect，无需手动setNeedsDisplay
     [self.view addSubview:shapeView];
     
     UILabel *textLabel = [[UILabel alloc] init];
-    textLabel.text = @"Londoners are under starter's orders as the city gets ready for the Olympic Games, which will begin one year today.To mark the start of the 366-day countdown (2012 is a leap year), special events are planned for today.The design of the Olympic medals will be unveiled tonight in a live ceremony from Trafalgar Square.Over at the brand new Aquatics Centre, Britain's star diver Tom Daley is going to perform an official launch dive into the Olympic pool.With this building, the organisers have attempted to give London a landmark to rival Beijing's Water Cube from 2008.It was designed by the prestigious architect Zaha Hadid and has a wave-like roof that is 160 metres long.Today's special events are designed to arouse interest in the Olympics around the world and to encourage British fans too.Many failed to get Olympic tickets in the recent sales process.According to a new survey for the BBC, 53% of Londoners think the process was \"not fair\".But the same survey found support is growing for London 2012. Of the 1,000 people surveyed, 73% said they backed the Games - up from 69% in 2006.Olympics minister Hugh Robertson said: \"We are under budget and ahead of time and as a nation we have a reputation of really getting behind these big events.";
     textLabel.numberOfLines = 0;
     textLabel.font = [UIFont systemFontOfSize:12];
+    textLabel.translatesAutoresizingMaskIntoConstraints = NO;
     [shapeView addSubview:textLabel];
     
+    textLabel.text = @"Londoners are under starter's orders as the city gets ready for the Olympic Games, which will begin one year today.To mark the start of the 366-day countdown (2012 is a leap year), special events are planned for today.The design of the Olympic medals will be unveiled tonight in a live ceremony from Trafalgar Square.Over at the brand new Aquatics Centre, Britain's star diver Tom Daley is going to perform an official launch dive into the Olympic pool.With this building, the organisers have attempted to give London a landmark to rival Beijing's Water Cube from 2008.It was designed by the prestigious architect Zaha Hadid and has a wave-like roof that is 160 metres long.Today's special events are designed to arouse interest in the Olympics around the world and to encourage British fans too.Many failed to get Olympic tickets in the recent sales process.According to a new survey for the BBC, 53% of Londoners think the process was \"not fair\".But the same survey found support is growing for London 2012. Of the 1,000 people surveyed, 73% said they backed the Games - up from 69% in 2006.Olympics minister Hugh Robertson said: \"We are under budget and ahead of time and as a nation we have a reputation of really getting behind these big events.";
+    
     //Visual Format Language
-    textLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    NSDictionary *metrics = @{@"m" : @10, @"h" : @40};
+    NSDictionary *metrics = @{@"m" : @10, @"h" : @20};
     NSDictionary *views = NSDictionaryOfVariableBindings(textLabel);
     
     NSString *vfl = @"H:|-m-[textLabel]-m-|";
@@ -85,10 +90,12 @@
     for (NSInteger i = 0; i < maxColum * maxRow; i ++) {
         NSInteger row = i / maxColum;
         NSInteger column = i % maxColum;
-        CornerView *corner = [[CornerView alloc] initWithFrame:CGRectMake(0 + radius * 2 * column + radius * row,
-                                                                          500 + radius * 2 * row - ((1 - (sqrtf(3) - 1)) * radius * row),
-                                                                          radius * 2,
-                                                                          radius * 2)];
+        CGRect frame = CGRectMake(0 + radius * 2 * column + radius * row,
+                                  500 + radius * 2 * row - ((1 - (sqrtf(3) - 1)) * radius * row),
+                                  radius * 2,
+                                  radius * 2);
+        //CornerView or MaskView
+        MaskView *corner = [[MaskView alloc] initWithFrame:frame];
         corner.backgroundColor = [UIColor colorWithRed:arc4random() % 255 / 255.0 green:arc4random() % 255 / 255.0 blue:arc4random() % 255 / 255.0 alpha:1.0];
         
         CGFloat vertexWH = 3.f;

@@ -23,6 +23,9 @@
 		23E9298F1A8DE185001139FA /* groupavatarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E9298E1A8DE185001139FA /* groupavatarTests.m */; };
 		23E9299A1A8DE1A1001139FA /* UIImage+maskClip.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E929991A8DE1A1001139FA /* UIImage+maskClip.m */; };
 		23E929AA1A8DE58B001139FA /* maskclip.png in Resources */ = {isa = PBXBuildFile; fileRef = 23E929A91A8DE58B001139FA /* maskclip.png */; };
+		673A86FB25AE94DA0094183E /* swift.png in Resources */ = {isa = PBXBuildFile; fileRef = 673A86F925AE94DA0094183E /* swift.png */; };
+		673A86FC25AE94DA0094183E /* apple.png in Resources */ = {isa = PBXBuildFile; fileRef = 673A86FA25AE94DA0094183E /* apple.png */; };
+		673A870125AE95080094183E /* MaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 673A870025AE95080094183E /* MaskView.m */; };
 		86A9E57C25AD2F9E00961E41 /* CustomShapeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A9E57B25AD2F9E00961E41 /* CustomShapeView.m */; };
 		86AE3A4F25AD704400272795 /* anormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 86AE3A4E25AD704400272795 /* anormal.png */; };
 		86AE3A5325AD704C00272795 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 86AE3A5225AD704C00272795 /* star.png */; };
@@ -63,6 +66,10 @@
 		23E929981A8DE1A1001139FA /* UIImage+maskClip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+maskClip.h"; sourceTree = "<group>"; };
 		23E929991A8DE1A1001139FA /* UIImage+maskClip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+maskClip.m"; sourceTree = "<group>"; };
 		23E929A91A8DE58B001139FA /* maskclip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maskclip.png; sourceTree = "<group>"; };
+		673A86F925AE94DA0094183E /* swift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swift.png; sourceTree = "<group>"; };
+		673A86FA25AE94DA0094183E /* apple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apple.png; sourceTree = "<group>"; };
+		673A86FF25AE95080094183E /* MaskView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaskView.h; sourceTree = "<group>"; };
+		673A870025AE95080094183E /* MaskView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaskView.m; sourceTree = "<group>"; };
 		86A9E57A25AD2F9E00961E41 /* CustomShapeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomShapeView.h; sourceTree = "<group>"; };
 		86A9E57B25AD2F9E00961E41 /* CustomShapeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomShapeView.m; sourceTree = "<group>"; };
 		86AE3A4E25AD704400272795 /* anormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = anormal.png; sourceTree = "<group>"; };
@@ -114,6 +121,8 @@
 		230A83FC1B8EEBD200AAC333 /* Mask */ = {
 			isa = PBXGroup;
 			children = (
+				673A86FA25AE94DA0094183E /* apple.png */,
+				673A86F925AE94DA0094183E /* swift.png */,
 				86AE3A5225AD704C00272795 /* star.png */,
 				86AE3A4E25AD704400272795 /* anormal.png */,
 				230A83F81B8EE36800AAC333 /* hexagon.png */,
@@ -151,6 +160,8 @@
 				86A9E57B25AD2F9E00961E41 /* CustomShapeView.m */,
 				86AE3A7A25AD990100272795 /* CornerView.h */,
 				86AE3A7B25AD990100272795 /* CornerView.m */,
+				673A86FF25AE95080094183E /* MaskView.h */,
+				673A870025AE95080094183E /* MaskView.m */,
 				23E929981A8DE1A1001139FA /* UIImage+maskClip.h */,
 				23E929991A8DE1A1001139FA /* UIImage+maskClip.m */,
 				230A83FA1B8EEB9700AAC333 /* Resource */,
@@ -273,6 +284,7 @@
 				2316E9691B8DC8B9002B3B80 /* 4.jpg in Resources */,
 				23E929AA1A8DE58B001139FA /* maskclip.png in Resources */,
 				2316E96B1B8DC8B9002B3B80 /* 0.jpg in Resources */,
+				673A86FC25AE94DA0094183E /* apple.png in Resources */,
 				23E9297E1A8DE185001139FA /* Main.storyboard in Resources */,
 				2316E9671B8DC8B9002B3B80 /* 2.jpg in Resources */,
 				2316E9681B8DC8B9002B3B80 /* 3.jpg in Resources */,
@@ -280,6 +292,7 @@
 				2316E9661B8DC8B9002B3B80 /* 1.jpg in Resources */,
 				86AE3A5325AD704C00272795 /* star.png in Resources */,
 				2316E96A1B8DC8B9002B3B80 /* 5.jpg in Resources */,
+				673A86FB25AE94DA0094183E /* swift.png in Resources */,
 				23E929801A8DE185001139FA /* Images.xcassets in Resources */,
 				230A83F91B8EE36800AAC333 /* hexagon.png in Resources */,
 			);
@@ -305,6 +318,7 @@
 				23E929781A8DE185001139FA /* AppDelegate.m in Sources */,
 				23E929751A8DE185001139FA /* main.m in Sources */,
 				86A9E57C25AD2F9E00961E41 /* CustomShapeView.m in Sources */,
+				673A870125AE95080094183E /* MaskView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
