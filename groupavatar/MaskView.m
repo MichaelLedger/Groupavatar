@@ -60,7 +60,7 @@
 
 - (void)setupMaskLayer {
     _maskLayer = [CALayer layer];
-    _maskLayer.contents = (__bridge id _Nullable)[UIImage imageNamed:@"apple"].CGImage;
+    _maskLayer.contents = (__bridge id _Nullable)[UIImage imageNamed:@"apple"].CGImage;//apple、circle
     self.layer.mask = _maskLayer;
 }
 
